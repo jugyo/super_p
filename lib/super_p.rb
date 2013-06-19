@@ -1,26 +1,25 @@
 require "super_p/version"
 
 module SuperP
-  class <<self
-    attr_accessor :color
-  end
+  class << self; attr_accessor :color; end
+  self.color = "\e[45;35m"
 end
 
 module Kernel
   def super_p(*args)
     cols = `tput cols`.to_i
     puts
-    print SuperP.color || "\e[45;35m"
+    print SuperP.color
     puts " " * cols
-    puts(*(args.map do |i|
+    args.each do |i|
       text = i.inspect
       padding = if text.size <= cols
           cols - text.size
         else
           cols - text.size % cols
         end
-      text + " " * padding
-    end))
+      puts text + " " * padding
+    end
     puts " " * cols
     print "\e[0m"
     puts " " * cols
