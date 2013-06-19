@@ -22,5 +22,5 @@ Or install it yourself as:
 
 specify the color like this:
 
-    SuperP.color = "\e[44;34m"
+    SuperP.color = "\e[45;35;5m" # blinking
     sp object
