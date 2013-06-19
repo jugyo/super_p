@@ -2,7 +2,7 @@ require "super_p/version"
 
 module SuperP
   class << self; attr_accessor :color; end
-  self.color = "\e[45;35m"
+  self.color = "\e[41;31;1m"
 end
 
 module Kernel
