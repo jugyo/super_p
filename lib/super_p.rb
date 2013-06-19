@@ -1,4 +1,5 @@
 require "super_p/version"
+require "g"
 
 module SuperP
   class <<self
@@ -12,7 +13,15 @@ module Kernel
       cols = `tput cols`.to_i
       print SuperP.color || "\e[45;35m"
       puts " " * cols
-      puts *args.map { |i| "#{i.inspect}#{' ' * (i.inspect.size % cols)}" }
+      puts *args.map do |i|
+        text = i.inspect
+        padding = if text.size < cols
+            cols - text.size
+          else
+            text.size % cols
+          end
+        text + " " + padding
+      end
       puts " " * cols
     ensure
       print "\e[0m"
