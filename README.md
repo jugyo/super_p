@@ -1,4 +1,4 @@
-# SuperP
+# super_p
 
 The super p.
 
