@@ -14,7 +14,7 @@ module Kernel
     puts " " * cols
     puts *(args.map do |i|
       text = i.inspect
-      padding = if text.size < cols
+      padding = if text.size <= cols
           cols - text.size
         else
           cols - text.size % cols
