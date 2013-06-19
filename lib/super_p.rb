@@ -12,7 +12,7 @@ module Kernel
     puts
     print SuperP.color || "\e[45;35m"
     puts " " * cols
-    puts *(args.map do |i|
+    puts(*(args.map do |i|
       text = i.inspect
       padding = if text.size <= cols
           cols - text.size
@@ -20,7 +20,7 @@ module Kernel
           cols - text.size % cols
         end
       text + " " * padding
-    end)
+    end))
     puts " " * cols
     print "\e[0m"
     puts " " * cols
