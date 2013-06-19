@@ -1,6 +1,4 @@
-# super_p
-
-The super p.
+![super_p](https://raw.github.com/jugyo/super_p/master/logo.gif)
 
 ## Installation
 
