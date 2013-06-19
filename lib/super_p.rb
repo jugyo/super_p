@@ -1,5 +1,4 @@
 require "super_p/version"
-require "g"
 
 module SuperP
   class <<self
